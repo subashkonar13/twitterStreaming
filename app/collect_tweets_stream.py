@@ -79,6 +79,9 @@ def connect_to_endpoint(url):
                 response1.status_code, response1.text
             )
         )
+'''
+Capturing the sentiment having the maximum value 
+'''
         
 def sentimentAnalyse(text):
     analyzer = SentimentIntensityAnalyzer()
