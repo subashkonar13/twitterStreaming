@@ -6,6 +6,7 @@ services:
     build: ./database/
   adminer:
     image: adminer
+    container_name: "adminer"
     restart: always
     depends_on:
     - db

@@ -12,8 +12,7 @@ db_host = 'db'
 db_port = '5432'
 db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
 db = create_engine(db_string)
-spark = SparkSession.builder.config("spark.jars", "/opt/application/postgresql-42.2.5.jar") \
-	                    .master("local[*]").appName("PySpark_Postgres_test").getOrCreate()
+
 '''
 def insert_tweet_data(i,text,created_at):
     # Insert a new number into the 'numbers' table.
@@ -35,28 +34,46 @@ def writetoPostgres(rows):
     .option("driver", "org.postgresql.Driver").option("dbtable", "tweet_data") \
     .option("user", "username").option("password", "secret").save()
 '''    
-#def writePyscopg(i,text,created_at):
-def writePyscopg(*params):
-    try:
+def connectdb():
+   try:
        connection = psycopg2.connect(user=db_user,
                                   password=db_pass,
                                   host=db_host,
                                   port=db_port,
                                   database=db_name)
        cursor = connection.cursor()
-       postgres_insert_query = """ INSERT INTO Tweet_Data_pys (id, tweet_text, created_at) VALUES (%s,%s,%s)"""
-       #record_to_insert = (i, text, created_at)
-       record_to_insert = (params)
-       cursor.execute(postgres_insert_query, record_to_insert)
+       return cursor,connection
+   except (Exception, psycopg2.Error) as error:
+       print("Failed to establish Connection", error)
+    
+    
+#def writePyscopg(i,text,created_at):
+def writeTweets(*params):
+    try:
+       cursor,connection=connectdb()
+       tweet_query = """ INSERT INTO Tweet_Data (user_id,tweet_id, tweet_text,sentiment,Emoticon,created_at) VALUES (%s,%s,%s,%s,%s,%s)"""
+       tweet_to_insert = (params)
+       cursor.execute(tweet_query, tweet_to_insert)
        connection.commit()
-       count = cursor.rowcount
-       print(count, "Record inserted successfully into mobile table")
+       #count = cursor.rowcount
+       print("Record inserted successfully into table")
 
     except (Exception, psycopg2.Error) as error:
-       print("Failed to insert record into mobile table", error)
-    
-    
+       print("Failed to insert record into Tweet_Data table", error)
 
+       
+def writeTrends(*p):
+    try:
+       cursor,connection=connectdb()
+       trending_query = """ INSERT INTO Trending_Data (trend_name, url, tweet_volume) VALUES (%s,%s,%s)"""
+       trend_to_insert = (p)
+       cursor.execute(trending_query, trend_to_insert)
+       connection.commit()
+       #count = cursor.rowcount
+       print("Record inserted successfully into table")
+
+    except (Exception, psycopg2.Error) as error:
+       print("Failed to insert record into Trending_Data table", error)      
 '''
 if __name__ == '__main__':
     print('Application started')
