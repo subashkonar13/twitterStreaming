@@ -1,15 +1,15 @@
-# Tutorial_DockerPythonPostgres
+# Tutorial on Extracting data from twitter and feed it to Postgres
 
-Here is available the code of the Medium tutorial here: XXXX
+## Description
+This tutorial is intended for self learning and making use of client authentication and consumer token(compatible with ver 2 and 1.1 respectively)
 
-## Create db table
+## Pre-requisites
+1. Install Docker Desktop.
+2. VSC/Any other interpreter.
+3. Twitter Developer account with Elevated Access and necessary tokens generated.
 
-Commands to create the db table:
-
-> docker ps 
-
-Used to identify the CONTAINER ID of postgres
-
-> docker exec -it <CONTAINER_ID> bash
-
-> psql postgres://username:secret@localhost:5432/database
+## Modules
+1. Python App
+2. Postgres
+3. Adminer  to view the data getting ingested
+4. VADER to do sentiment analysis
