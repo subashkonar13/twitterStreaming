@@ -94,7 +94,7 @@ def connect_to_endpoint(url: str) -> None:
                     sentiment='Mixed feelings'
             else:
                     sentiment='Not available'
-            postgres.writeTweets(user_id, tweet_id, text, sentiment, comp, emojis, created_at)
+            postgres.write_tweets(user_id, tweet_id, text, sentiment, comp, emojis, created_at)
 
     if response1.status_code != 200:
         raise Exception(
@@ -163,7 +163,7 @@ def extractData() -> None:
                         trend_name = i['name']
                         url = i['url']
                         tweet_volume = i.get('tweet_volume', None)
-                        postgres.writeTrends(trend_name, url, tweet_volume)
+                        postgres.write_trends(trend_name, url, tweet_volume)
                 except TypeError:
                     print(f"TypeError: {json_response}")
 
