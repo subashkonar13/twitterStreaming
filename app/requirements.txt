@@ -1,8 +1,9 @@
 sqlalchemy
 psycopg2
 tenacity
-pandas
-pyspark
 requests
-tweepy
 vaderSentiment
+pandas
+scikit-learn
+nltk
+statistics
