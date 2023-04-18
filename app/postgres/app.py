@@ -1,7 +1,5 @@
 import time
 import random
-#from sqlalchemy import create_engine,text
-#import pyspark
 import psycopg2
 import json
 
