@@ -17,3 +17,4 @@ This tutorial is intended for self learning and making use of client authenticat
 ## Execution
 
 `docker compose up`
+![alt text](https://github.com/subashkonar13/twitterStreaming/blob/main/images/git1.jpg)
