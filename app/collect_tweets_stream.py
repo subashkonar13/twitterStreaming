@@ -25,7 +25,7 @@ CONSUMER_SECRET: str = credentials['twitter_api_secret_key']
 ACCESS_TOKEN: str = credentials['twitter_access_token']
 ACCESS_TOKEN_SECRET: str = credentials['twitter_access_token_secret']
 BEARER_TOKEN: str = credentials['bearer_token']
-QUERY: str = 'IKEA lang:en -is:retweet'
+QUERY: str = 'IPL lang:en -is:retweet'
 TWEET_FIELDS: str = "tweet.fields=id,created_at,text,author_id"
 EMOJI_REGEX: re.Pattern = re.compile('[\\u203C-\\u3299\\U0001F000-\\U0001F644]')
 EXPANSIONS: str = "expansions=author_id"
