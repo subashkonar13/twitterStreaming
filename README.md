@@ -26,3 +26,5 @@ This tutorial is intended for self learning and making use of Twitter client aut
 ## Monitor
 
 Access the Adminer link- http://localhost:8080/?pgsql=db to watch the rows getting added.
+
+![](https://github.com/subashkonar13/twitterStreaming/blob/main/images/git124.jpg)
