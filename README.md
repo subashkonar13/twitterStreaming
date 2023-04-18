@@ -9,12 +9,20 @@ This tutorial is intended for self learning and making use of Twitter client aut
 3. Twitter Developer account with Elevated Access and necessary tokens generated.
 
 ## Modules
-1. Python App
-2. Postgres
+1. collect_tweet_stream.py extracts the tweets
+2. app.py writes the data to postgres tables
 3. Adminer  to view the data getting ingested
-4. VADER to do sentiment analysis
+4. VADER analyses the sentiment
+
+## Configuration
+1. Make changes in the credentials.json to add the Twitter credentials.
+
 
 ## Execution
 
 `docker compose up`
 ![alt text](https://github.com/subashkonar13/twitterStreaming/blob/main/images/git1.jpg)
+
+## Monitor
+
+Access the Adminer link- http://localhost:8080/?pgsql=db to watch the rows getting added.
