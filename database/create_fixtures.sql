@@ -1,4 +1,3 @@
-DROP TABLE  IF EXISTS Emoticon_Data;
 DROP TABLE  IF EXISTS Tweet_Data;
 DROP TABLE  IF EXISTS Trending_Data;
 
@@ -9,10 +8,13 @@ CREATE TABLE IF NOT EXISTS Tweet_Data (
     tweet_id BIGINT,
 	tweet_text text,
 	sentiment text,
+	comp float,
 	Emoticon text,
 	created_at TIMESTAMPTZ,
 	IngestionTime TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
+
+
 
 
 CREATE TABLE IF NOT EXISTS Trending_Data (
