@@ -6,19 +6,20 @@ import json
 
 with open('conf/credentials.json','r') as f:
     credentials = json.load(f)
-db_user: str = credentials['db_user']
-db_pass: str = credentials['db_pass']
-db_host: str = credentials['db_host']
-db_name: str = credentials['db_name']
+DBUSER: str = credentials['db_user']
+DBPASS: str = credentials['db_pass']
+DBHOST: str = credentials['db_host']
+DBPORT: str = credentials['db_port']
+DBNAME: str = credentials['db_name']
 
     
 def connectdb():
    try:
-       connection = psycopg2.connect(user=db_user,
-                                  password=db_pass,
-                                  host=db_host,
-                                  port=db_port,
-                                  database=db_name)
+       connection = psycopg2.connect(user=DBUSER,
+                                  password=DBPASS,
+                                  host=DBHOST,
+                                  port=DBPORT,
+                                  database=DBNAME)
        cursor = connection.cursor()
        return cursor,connection
    except (Exception, psycopg2.Error) as error:
