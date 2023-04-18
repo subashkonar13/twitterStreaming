@@ -9,10 +9,10 @@ This tutorial is intended for self learning and making use of Twitter client aut
 3. [Twitter Developer](https://developer.twitter.com/en/portal/dashboard) account with Elevated Access and necessary tokens generated.
 
 ## Modules
-1. collect_tweet_stream.py extracts the tweets
-2. app.py writes the data to postgres tables
+1. `collect_tweet_stream.py` extracts the tweets
+2. `app.py` writes the data to postgres tables
 3. Adminer  to view the data getting ingested
-4. VADER analyses the sentiment
+4. `VADER` analyses the sentiment
 
 ## Configuration
 1. Make changes in the `credentials.json` to add the Twitter credentials.
