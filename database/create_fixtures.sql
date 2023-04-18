@@ -5,10 +5,10 @@ DROP TABLE  IF EXISTS Trending_Data;
 CREATE TABLE IF NOT EXISTS Tweet_Data (
     Sno Serial,
 	user_id BIGINT PRIMARY KEY,
-    tweet_id BIGINT,
+        tweet_id BIGINT,
 	tweet_text text,
 	sentiment text,
-	comp float,
+	compound float,
 	Emoticon text,
 	created_at TIMESTAMPTZ,
 	IngestionTime TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
