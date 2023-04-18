@@ -4,9 +4,9 @@
 This tutorial is intended for self learning and making use of Twitter client authentication and consumer token(compatible with ver 2 and 1.1 respectively)
 
 ## Pre-requisites
-1. Install Docker Desktop.
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. VSC/Any other interpreter.
-3. Twitter Developer account with Elevated Access and necessary tokens generated.
+3. [Twitter Developer](https://developer.twitter.com/en/portal/dashboard) account with Elevated Access and necessary tokens generated.
 
 ## Modules
 1. collect_tweet_stream.py extracts the tweets
