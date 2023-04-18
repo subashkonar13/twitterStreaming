@@ -15,7 +15,7 @@ This tutorial is intended for self learning and making use of Twitter client aut
 4. VADER analyses the sentiment
 
 ## Configuration
-1. Make changes in the credentials.json to add the Twitter credentials.
+1. Make changes in the `credentials.json` to add the Twitter credentials.
 
 
 ## Execution
