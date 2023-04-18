@@ -13,3 +13,7 @@ This tutorial is intended for self learning and making use of client authenticat
 2. Postgres
 3. Adminer  to view the data getting ingested
 4. VADER to do sentiment analysis
+
+## Execution
+
+`docker compose up`
