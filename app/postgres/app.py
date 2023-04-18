@@ -1,15 +1,16 @@
 import time
 import random
-from sqlalchemy import create_engine,text
-#import pyspark
 import psycopg2
-db_name = 'database'
-db_user = 'username'
-db_pass = 'secret'
-db_host = 'db'
-db_port = '5432'
-db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
-db = create_engine(db_string)
+import json
+
+
+with open('conf/credentials.json','r') as f:
+    credentials = json.load(f)
+db_user: str = credentials['db_user']
+db_pass: str = credentials['db_pass']
+db_host: str = credentials['db_host']
+db_name: str = credentials['db_name']
+
     
 def connectdb():
    try:
